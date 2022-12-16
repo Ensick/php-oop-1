@@ -12,13 +12,28 @@ class Movie{
 
     public $name;
     public $genre;
+    public $duration;
     public $year;
 
-    function __construct($_name,$_genre,$_year){
+    function __construct($_name,$_genre,$_duration,$_year){
 
-        $this-> name = $_name;
-        $this-> genre = $_genre;
-        $this-> year = $_year;
+        $this -> name = $_name;
+        $this -> genre = $_genre;
+        $this -> duration =  $_duration;
+        $this -> year = $_year;
+    }
+
+    public function inDuration(){
+
+        if($this -> duration > 120){
+
+            return "$this->name dura piu di 2 ore";
+
+        }else{
+
+            return "$this->name dura meno di 2 ore";
+        }   
+
     }
 
 }
